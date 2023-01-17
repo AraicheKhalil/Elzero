@@ -4,7 +4,9 @@
 body{
     font-family: "Cairo", sans-serif;
 }
-*{
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 ul{
@@ -15,7 +17,9 @@ ul{
 a{
     text-decoration: none;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 /*** Start Container ***/
 
 /*** End Container ***/
@@ -58,9 +62,90 @@ a{
 }
 /*** End Components ***/
 
+/*** Start Main-Title Component ***/
+.main-title {
+    text-transform: uppercase;
+    margin: 0 auto 80px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.main-title::before,
+.main-title::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.main-title::before {
+    left: -30px;
+}
+.main-title::after {
+    right: -30px;
+}
+.main-title:hover::before {
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after {
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+.main-title:hover {
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+}
+@keyframes left-move {
+    50% {
+      left: 0;
+      width: 12px;
+      height: 12px;
+    }
+    100% {
+      left: 0;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+    }
+}
+@keyframes right-move {
+    50% {
+      right: 0;
+      width: 12px;
+      height: 12px;
+    }
+    100% {
+      right: 0;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+    }
+}
+
+/*** Start Main-Title Component ***/
+
 
 
 /************ End Global Rules ***************/
+
+
 
 /* Start Header */
 .Header{
@@ -167,7 +252,8 @@ a{
 .Header .main-nav li:nth-child(4):hover .mega-menu {
     z-index: 1;
     opacity: 1;
-    top: 73px;
+    top: 100%;
+    margin-top: 1px;
 }
 .Header .mega-menu .image img{
     max-width: 100%;
@@ -228,7 +314,8 @@ a{
 .Header .mega-menu .links li a i{
     margin-right: 10px;
 }
-/* Header : start megamanue */
+/* Header : End megamanue */
+
 /* End Header */
 
 
