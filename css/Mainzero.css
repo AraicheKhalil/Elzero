@@ -905,10 +905,514 @@ html{
 /* End Team Member Section */
 
 /* Start Services Section */
+.Services{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+.Services .Container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.Services .box{
+    background-color: white;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    position: relative;
+    counter-increment: services;
+}
+.Services .box::before{
+    content: '';
+    left: 50%;
+    height: 3px;
+    background-color: var(--main-color);
+    position: absolute;
+    width: 0;
+    transition: var(--main-transition);
+    transform: translateX(-50%);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+} 
+.Services .box:hover{
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+.Services .box:hover::before{
+    width: 100%;
+}
 
+.Services .box i{
+    text-align: center;
+    color: #d5d5d5;
+    display: block;
+    margin: 20px auto;
+}
+.Services .box h3{
+    text-align: center;
+    margin: 20px 0 40px;
+    font-size: 25px;
+    color: var(--main-color);
+}
+.Services .box .info{
+    padding: 15px;
+    text-align: right;
+    position: relative;
+    background-color: #f9f9f9 ;
+}
+
+.Services .box .info::before{
+    content: "0" counter(services);
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px
+}
+.Services .box .info::after{
+    content: '';
+    position: absolute;
+    background-color: #d5d5d5;
+    width: 50px;
+    height: 100%;
+    left: 80px;
+    top: 0;
+    transform:skew(-30deg);
+    -webkit-transform:skew(-30deg);
+    -moz-transform:skew(-30deg);
+    -ms-transform:skew(-30deg);
+    -o-transform:skew(-30deg);
+}
+.Services .box .info a{
+    text-decoration: none;
+    color: var(--main-color);
+}
 /* End Services Section */
 
+/* Start Our Skills Section */
+.Skills{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+.Skills .Container{
+    display: flex;
+    align-items: center;
+}
+@media (max-width:991px) {
+    .Skills img{
+        display: none;
+    }
+}
+.Skills .Skills-box{
+    flex: 1;
+}
+.Skills .Skills-box .Skill h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Skills .Skills-box .Skill h3 span{
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 4px;
+    color: var(--main-color);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.Skills .Skills-box .Skill .progress{
+    height: 30px;
+    background-color: #eee;
+    position: relative;
+}
+.Skills .Skills-box .Skill .progress span{
+    position: absolute;
+    background-color: var(--main-color);
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 
+/* End Our Skills Section */
 
+/* Start How it Works Section */
+.Works{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+.Works .Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width:991px) {
+    .Works .Container{
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        /* 
+        iF you Want to Change The Direction of flexbox items
+        in specific width , try to Use flex-column
+        first instead flex-Wrap 
+        */
+    }
+}
+.Works img{
+    max-width: 100%;
+    margin-right: 100px;
+}
+@media (max-width:991px) {
+    .Works img{
+        margin:  0 0 50px;
+    }
+}
+.Works .info .box{
+    padding: 30px;
+    margin-bottom: 20px;
+    background-color: #f6f5f5;
+    border-radius: 6px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    z-index: 1;
+    border: 2px solid white;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+@media (max-width:750px) {
+    .Works .info .box{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.Works .info .box::before{
+    content: '';
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #ededed;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    z-index: -1;
+}
+.Works .info .box:hover::before{
+    width: 100%;
+    height: 100%;
+}
+.Works .info .box img{
+    width: 64px;
+    margin-right: 30px;
+}
+@media (max-width:750px) {
+    .Works .info .box img{
+        margin-right: 0;
+    }
+}
+.Works .info .box .text h3{
+    margin: 0;
+    font-size: 22px;
+}
+.Works .info .box .text p{
+    color: #777;
+    line-height: 1.7;
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+/* End How it Works Section */
 
+/* Start Event Section */
+.Events{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+.Events .Container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.Events img{
+    max-width: 450px;
+}
+@media (max-width:991px) {
+    .Events img{
+        display: none;
+    }
+}
+.Events .info{
+    flex: 1;
+}
+.Events .info .time{
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+    justify-content: center;
+}
+.Events .info .time .unit{
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    text-align: center;
+    width: 75px;
+    transition: var(--main-transition);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.Events .info .time .unit:hover{
+    border: 1px solid var(--main-color);
+}
+.Events .info .time .unit span{
+    display: block;
+}
+.Events .info .time .unit span:nth-child(1){
+    color: var(--main-color);
+    padding: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    border-bottom: 1px solid #d4d4d4;
+    transition:var(--main-transition);
+    -webkit-transition:var(--main-transition);
+    -moz-transition:var(--main-transition);
+    -ms-transition:var(--main-transition);
+    -o-transition:var(--main-transition);
+}
+.Events .info .time .unit:hover span:nth-child(1){
+    border-bottom: 1px solid var(--main-color);
+}
+.Events .info .time .unit span:nth-child(2){
+    padding: 8px 10px;
+    font-size: 13px;
+}
+.Events .info h2{
+    text-align: center;
+    font-size: 30px;
+    margin: 40px 0 0;
+}
+.Events .info p{
+    color: #777;
+    line-height: 1.7;
+    text-align: center;
+    font-size: 19px;
+}
+.Events .subscribe{
+    width: 100%;
+    margin-top: 50px;
+}
+.Events .subscribe form{
+    width: 600px;
+    margin: 20px auto;
+    padding: 30px 40px;
+    background-color: #f6f5f5;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.Events .subscribe form input{
+    padding: 20px;
+    border-radius: 50px;
+    border-style: none;
+}
+@media (max-width:750px) {
+    .Events .subscribe form{
+        width: 100%;
+        flex-direction: column;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+}
+}
+.Events .subscribe form input[value="Subscribe"]{
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+}
+.Events .subscribe form input[value="Subscribe"]:hover{
+    background-color: #1787e0;
+}
+.Events .subscribe form input[type="email"]{
+    border: none;
+    caret-color: var(--main-color);
+    flex: 1 ;
+}
+@media (max-width:767px) {
+    .Events .subscribe form input[type="email"],
+    .Events .subscribe form input[value="Subscribe"]{
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+}
+}
+.Events .subscribe form input[type="email"]:focus{
+    outline: none;
+}
+.Events .subscribe form input[type="email"]::placeholder{
+    transition: opacity var(--main-transition);
+    -webkit-transition: opacity var(--main-transition);
+    -moz-transition: opacity var(--main-transition);
+    -ms-transition: opacity var(--main-transition);
+    -o-transition: opacity var(--main-transition);
+}
+.Events .subscribe form input[type="email"]:focus::placeholder{
+    opacity: 0;
+}
+/* End Event Section */
 
+.Pricing{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+.Pricing .Container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    gap: 30px;
+}
+.Pricing .box{
+    background-color: white;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 13%),    0 2px 4px rgb(0 0 0 / 12%);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+}
+.Pricing .box::before,
+.Pricing .box::after{
+    content: '';
+    width: 0;
+    height: 50%;
+    position: absolute;
+    background-color: #f6f6f6;
+    transition: var(--main-transition);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    z-index: -1;
+}
+.Pricing .box::before{
+    left: 0;
+}
+.Pricing .box::after{
+    right: 0;
+    top: 50%;
+}
+.Pricing .box:hover::before,
+.Pricing .box:hover::after{
+    width: 100%;
+}
+.Pricing .popular .label{
+    padding: 10px 10px 30px;
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: white;
+    /* transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -o-transform:rotate(90deg); */
+    writing-mode: vertical-rl;
+    font-size: 18px;
+}
+.Pricing .popular .label::before{
+    content: '';
+    
+}
+.Pricing .box .title{
+    font-weight: bold;
+    margin: 30px 0;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+.Pricing .box img{
+    width: 80px;
+    margin-bottom: 30px;
+}
+.Pricing .box .price .amount{
+    display: block;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--main-color);
+}
+.Pricing .box .price .time{
+    color: #777;
+}
+.Pricing .box ul{
+    text-align: left;
+    margin: 20px 0;
+}
+.Pricing .box ul li{
+    padding: 20px ;
+    border-top: 1px solid #eee;
+}
+.Pricing .box a{
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 30px 0;
+}
